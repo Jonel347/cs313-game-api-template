@@ -22,12 +22,12 @@ const GameAnswer = require('./game-answer')(sequelize, DataTypes);
 
 // User → Question Sets
 User.hasMany(QuestionSet, {
-  foreignKey: 'created_by',
+  foreignKey: 'owner_user_id',
   as: 'questionSets'
 });
 
 QuestionSet.belongsTo(User, {
-  foreignKey: 'created_by',
+  foreignKey: 'owner_user_id',
   as: 'creator'
 });
 
